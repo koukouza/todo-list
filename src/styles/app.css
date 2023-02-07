@@ -1,0 +1,26 @@
+.title {
+    text-align: center;
+    margin-top : 30px;
+}
+
+.delete-todo {
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.6;
+}
+
+.input-group {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+

@@ -1,0 +1,47 @@
+<html> 
+  <head>
+    <title></title> 
+  </head>
+
+  <body> 
+    <section class="vh-100" style="background-color: #eee;">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col col-lg-9 col-xl-7">
+            <div class="card rounded-3">
+              <div class="card-body p-4">
+
+                <h4 class="text-center my-3 pb-3">To Do App</h4>
+
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="New task" aria-label="New task" aria-describedby="button-addon2" [(ngModel)]="newTodo">
+                  <button class="btn btn-outline-warning" type="button" id="button-addon2" (click)="saveTodo()">➕</button>
+                </div>
+
+                <table class="table mb-4">
+                  <thead>
+                    <tr>
+                      <th scope="col">No.</th>
+                      <th scope="col">Todo item</th>
+                      <th scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let todo of todos; let i = index">
+                      <th scope="row">{{i+1}}</th>
+                      <td class="{{(!todo.isCompleted)?'done':''}}">{{todo.name}}</td>
+                      <td>
+                        <button type="submit" class="btn btn-danger" (click)="remove(i)">Delete</button>
+                        <button type="submit" class="btn btn-success ms-1" (click)="done(i)">Finished</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
